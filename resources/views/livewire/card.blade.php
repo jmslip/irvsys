@@ -9,6 +9,15 @@
       <div class="icon">
         <i class="fas {{$icon}}"></i>
       </div>
-      <a href="#" class="small-box-footer">Acessar <i class="fas fa-arrow-circle-right"></i></a>
+      <div class="row">
+        <div class="col-6 small-box-footer">
+          <button class="btn btn-lg" wire:click="tabela">Visualizar <i class="fas {{$icon}}"></i></button>
+
+        </div>
+        <div class="col-6 small-box-footer">
+          <button class="btn btn-lg" wire:click="formulario">Novo <i class="fas fa-plus-circle"></i></button>
+
+        </div>
+      </div>
     </div>
 </div>

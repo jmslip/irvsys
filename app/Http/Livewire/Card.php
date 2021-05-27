@@ -11,6 +11,7 @@ class Card extends Component
     public $tipo = null;
     public $icon = 'fa-church';
     public $background = 'bg-success';
+    public $message = '';
 
     public function render()
     {
@@ -24,5 +25,24 @@ class Card extends Component
             $this->icon = 'fa-users';
             $this->background = 'bg-info';
         }
+    }
+
+    public function formulario() {
+        $params = [
+            'titulo' => $this->titulo,
+            'tipo' => $this->tipo,
+            'icon' => $this->icon,
+            'ativo' => true
+        ];
+
+        $this->emit('ativar', $params);
+    }
+
+    public function tabela() {
+        $params = [
+            'ativo' => false
+        ];
+
+        $this->emit('ativar', $params);
     }
 }
