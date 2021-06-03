@@ -17,10 +17,11 @@ class CreateMembrosTable extends Migration
             $table->id();
             $table->string('nome');
             $table->date('dt_nascimento');
-            $table->string('telfone')->nullable();
+            $table->string('telefone')->nullable();
             $table->string('celular')->nullable();
             $table->string('email')->nullable();
             $table->string('endereco')->nullable();
+            $table->string('cep')->nullable();
             $table->timestamps();
         });
     }
