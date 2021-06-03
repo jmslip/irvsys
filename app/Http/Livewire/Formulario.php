@@ -150,8 +150,8 @@ class Formulario extends Component
 
         $membro->save();
 
+        $this->dispatchBrowserEvent('salvo-sucesso', ['membro' => $this->nome]);
         $this->limpar();
-        $this->dispatchBrowserEvent('salvo-sucesso');
     }
 
     private function formataEndereco() {

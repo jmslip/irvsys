@@ -50,6 +50,7 @@
                     <x-adminlte-button wire:click="save" theme="success" label="Salvar" id="salvar" />
                     <x-adminlte-button wire:click="cancela" theme="danger" label="Cancelar" id="cancelar"/>
                     <x-adminlte-button wire:click="limpar" theme="warning" label="Limpar" id="limpar"/>
+                    <x-adminlte-button wire:click="teste" theme="warning" label="teste" id="teste"/>
                 </div>
             </div>
         </form>
@@ -60,7 +61,11 @@
 @section('js')
     <script>
         document.addEventListener('salvo-sucesso', (event) => {
-            
-        });    
+            Swal.fire(
+                'Sucesso!',
+                `Membro ${event.detail.membro} foi salvo com sucesso!`,
+                'success'
+            )
+        });
     </script>    
 @endsection
