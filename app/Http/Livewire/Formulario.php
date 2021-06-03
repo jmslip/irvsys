@@ -4,15 +4,12 @@ namespace App\Http\Livewire;
 
 use App\Models\Membro;
 use GuzzleHttp\Client;
-use Illuminate\Http\Request;
 use Livewire\Component;
-
-use function PHPSTORM_META\map;
 
 class Formulario extends Component
 {
     protected $listeners = [
-        'ativar',
+        'ativa-formulario' => 'ativar',
         'atualizaInfoCep' => 'pesquisaCepCorreios',
         'desbloqueiaCampos'
     ];

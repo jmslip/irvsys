@@ -28,21 +28,34 @@ class Card extends Component
     }
 
     public function formulario() {
-        $params = [
+        $paramsForm = [
             'titulo' => $this->titulo,
             'tipo' => $this->tipo,
             'icon' => $this->icon,
             'ativo' => true
         ];
 
-        $this->emit('ativar', $params);
-    }
-
-    public function tabela() {
-        $params = [
+        $paramsDatatable = [
             'ativo' => false
         ];
 
-        $this->emit('ativar', $params);
+        $this->emit('ativa-formulario', $paramsDatatable);
+        $this->emit('ativa-formulario', $paramsForm);
+    }
+
+    public function tabela() {
+        $paramsForm = [
+            'ativo' => false
+        ];
+
+        $paramsDatatable = [
+            'titulo' => $this->titulo,
+            'tipo' => $this->tipo,
+            'icon' => $this->icon,
+            'ativo' => true
+        ];
+
+        $this->emit('ativa-formulario', $paramsForm);
+        $this->emit('ativa-tabela', $paramsDatatable);
     }
 }

@@ -5,6 +5,13 @@
         @livewire('card', ['titulo' => "membros", 'tipo' => 'members'])
     </div>
     <div class="row">
-        @livewire('formulario', ['titulo' => "membros", 'ativo' => false])
+        @if("renderFormMembros")
+            @livewire('formulario', ['titulo' => "membros"])
+        @endif
+    </div>
+    <div class="row">
+        @if("renderTableMembros")
+            @livewire('datatable-usuario', ['titulo' => "membros"])
+        @endif
     </div>
 @endsection
